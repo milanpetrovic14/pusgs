@@ -22,6 +22,17 @@ namespace WebApp.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
+
+            //tu nesto dodajemo sta nam bude bilo potrebno za model
+
+            context.Products.Add(new Product() { Description = "Product description" } );
+            context.Cenovnici.Add(new Cenovnik() { Od = DateTime.Now, Do = DateTime.Now });
+            //context.Karte.Add(new Karta() { VremeKupovine = DateTime.Now });
+            context.Linije.Add(new Linija() { ImeLinije = "Linija 22" });
+            //context.RedoviVoznje.Add(new RedVoznje() { });
+            context.Stanice.Add(new Stanica() { NazivStanice = "Stanica 2", AdresaStanice = "Adresa 2" });
+            //context.Stavke.Add(new Stavka() { /* Cenovnik = null, TipKarte = null,*/ Cena = 88 });
+
             if (!context.Roles.Any(r => r.Name == "Admin"))
             {
                 var store = new RoleStore<IdentityRole>(context);
@@ -51,7 +62,7 @@ namespace WebApp.Migrations
 
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
-
+                
             if (!context.Users.Any(u => u.UserName == "admin@yahoo.com"))
             {
                 var user = new ApplicationUser() { Id = "admin", UserName = "admin@yahoo.com", Email = "admin@yahoo.com", PasswordHash = ApplicationUser.HashPassword("Admin123!") };
@@ -65,6 +76,8 @@ namespace WebApp.Migrations
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "AppUser");
             }
+
+
         }
     }
 }
