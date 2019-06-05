@@ -17,6 +17,15 @@ namespace WebApp.Persistence.UnitOfWork
             _context = context;
         }
 
+        [Dependency]
+        public IProductRepository Product { get; set; }
+        public ILinijeRepository Linija { get; set; }
+        public IRedVoznjeRepozitorijum RedVoznje { get; set; }
+        public IStavkaRepository Stavka { get; set; }
+        public ICenovnikRepozitorijum Cenovnik { get; set; }
+        public IKartaRepository Karta { get; set; }
+        public IStanicaRepository Stanica { get; set; }
+
         public int Complete()
         {
             return _context.SaveChanges();

@@ -9,6 +9,14 @@ namespace WebApp.Persistence.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {
+
+        IProductRepository Product { get; set; } //Products
+        ILinijeRepository Linija { get; set; }
+        IRedVoznjeRepozitorijum RedVoznje { get; set; }
+        IStavkaRepository Stavka { get; set; }
+        ICenovnikRepozitorijum Cenovnik { get; set; }
+        IKartaRepository Karta { get; set; }
+        IStanicaRepository Stanica { get; set; }
         int Complete();
     }
 }
