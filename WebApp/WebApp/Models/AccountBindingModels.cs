@@ -50,6 +50,14 @@ namespace WebApp.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class ProductBindingModel {
+        [Required]
+
+        [Display(Name = "Description")]
+        public string Description { get; set; }
+
+    }
+
     public class RegisterExternalBindingModel
     {
         [Required]
