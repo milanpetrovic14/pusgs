@@ -20,7 +20,7 @@ using WebApp.Results;
 namespace WebApp.Controllers
 {
     [Authorize]
-    [RoutePrefix("api/Account")]
+    [RoutePrefix("api/Account")] //na koje nesto gadjamo kontorler
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
