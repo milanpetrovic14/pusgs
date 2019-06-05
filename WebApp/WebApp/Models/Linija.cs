@@ -10,8 +10,9 @@ namespace WebApp.Models
     {
         [Key]
         public int IdLinije { get; set; }
+        public string ImeLinije { get; set; }
         public List<Stanica> Stanice { get; set; }
-        public DateTime VremePolaskaA { get; set; }
-        public DateTime VremePolaskaB { get; set; }
+        //public DateTime VremePolaskaA { get; set; }
+        //public DateTime VremePolaskaB { get; set; }
     }
 }

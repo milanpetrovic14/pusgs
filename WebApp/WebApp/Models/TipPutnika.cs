@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace WebApp.Models
 {
-    public enum TipPutnika
+    public class TipPutnika
     {
-           Djak,
-           Penzioner,
-           Regularan
+           //Djak,
+           //Penzioner,
+           //Regularan
+           [Key]
+           public string Tip { get; set; }
+           public double Koeficijet { get; set; }
+            
     }
 }

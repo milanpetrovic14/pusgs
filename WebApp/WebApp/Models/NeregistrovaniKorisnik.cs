@@ -11,4 +11,5 @@ namespace WebApp.Models
         [Key]
         public int IdKarteKorisnika { get; set; }
     }
+    //lista stavki, stavka(karta)
 }

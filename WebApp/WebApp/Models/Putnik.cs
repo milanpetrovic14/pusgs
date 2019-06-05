@@ -9,6 +9,7 @@ namespace WebApp.Models
     {
         public DateTime DatumRodjenja { get; set; }
 
+        public TipPutnika Tip { get; set; }
         public List<Karta> KupljeneKarte { get; set; }
         public string Dokument {get; set;}
     }

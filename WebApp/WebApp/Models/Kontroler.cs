@@ -7,6 +7,6 @@ namespace WebApp.Models
 {
     public class Kontroler : RegistrovaniKorisnik
     {
-        public List<Karta> ProdeteKarte { get; set; }
+        //public List<Karta> ProdateKarte { get; set; }
     }
 }

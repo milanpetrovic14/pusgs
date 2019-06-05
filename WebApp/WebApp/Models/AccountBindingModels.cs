@@ -58,6 +58,60 @@ namespace WebApp.Models
 
     }
 
+    public class LinijaBindingModel
+    {
+        [Required]
+
+        [Display(Name = "ImeLinije")]
+        public string ImeLinije { get; set; }
+
+    }
+
+    public class StavkaBindingModel
+    {
+        [Required]
+
+        [Display(Name = "Cena")]
+        public double Cena { get; set; }
+
+    }
+
+    public class CenovnikBindingModel
+    {
+        [Required]
+
+        [Display(Name = "Od")]
+        public DateTime Od { get; set; }
+
+    }
+
+    public class KartaBindingModel
+    {
+        [Required]
+
+        [Display(Name = "VremeKupovine")]
+        public DateTime VremeKupovine { get; set; }
+
+    }
+
+    public class StanicaBindingModel
+    {
+        [Required]
+
+        [Display(Name = "NazivStanice")]
+        public string NazivStanice { get; set; }
+
+    }
+    
+    public class RedVoznjeBindingModel
+    {
+        //[Required]
+
+        //[Display(Name = "NazivStanice")]
+        //public string NazivStanice { get; set; }
+
+    }
+
     public class RegisterExternalBindingModel
     {
         [Required]
