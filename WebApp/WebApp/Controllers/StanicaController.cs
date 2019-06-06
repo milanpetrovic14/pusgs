@@ -27,7 +27,7 @@ namespace WebApp.Controllers
         public IHttpActionResult PostStanica(StanicaBindingModel stanIM)
         {
 
-            var stan = new Stanica() { NazivStanice = stanIM.NazivStanice };
+            var stan = new Stanica() { NazivStanice = stanIM.NazivStanice, AdresaStanice = stanIM.AdresaStanice };
 
             unitOfWork.Stanica.Add(stan);
             unitOfWork.Complete();

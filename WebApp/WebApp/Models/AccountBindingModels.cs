@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
@@ -65,6 +66,11 @@ namespace WebApp.Models
         [Display(Name = "ImeLinije")]
         public string ImeLinije { get; set; }
 
+
+        [Display(Name = "Stanice")]
+
+        public List<Stanica> Stanice { get; set; }
+
     }
 
     public class StavkaBindingModel
@@ -73,6 +79,15 @@ namespace WebApp.Models
 
         [Display(Name = "Cena")]
         public double Cena { get; set; }
+
+        [Display(Name = "ListaKarti")]
+        public List<TipKarte> ListaKarti { get; set; }
+
+        [Display(Name = "Cenovnik")]
+        public Cenovnik Cenovnik { get; set; }
+
+        [Display(Name = "TipKarte")]
+        public TipKarte TipKarte { get; set; }
 
     }
 
@@ -83,6 +98,9 @@ namespace WebApp.Models
         [Display(Name = "Od")]
         public DateTime Od { get; set; }
 
+        [Display(Name = "Do")]
+        public DateTime Do { get; set; }
+
     }
 
     public class KartaBindingModel
@@ -91,6 +109,12 @@ namespace WebApp.Models
 
         [Display(Name = "VremeKupovine")]
         public DateTime VremeKupovine { get; set; }
+        [Display(Name = "VrstaKarte")]
+        public TipKarte VrstaKarte { get; set; }
+        [Display(Name = "Stavka")]
+        public Stavka Stavka { get; set; }
+        [Display(Name = "Putnik")]
+        public Putnik Putnik { get; set; }
 
     }
 
@@ -100,15 +124,21 @@ namespace WebApp.Models
 
         [Display(Name = "NazivStanice")]
         public string NazivStanice { get; set; }
+        [Display(Name = "AdresaStanice")]
+
+        public string AdresaStanice { get; set; }
 
     }
     
     public class RedVoznjeBindingModel
     {
         //[Required]
-
-        //[Display(Name = "NazivStanice")]
-        //public string NazivStanice { get; set; }
+        [Display(Name = "Linije")]
+        public Linija Linije { get; set; }
+        [Display(Name = "Dan")]
+        public TipDana Dan { get; set; }
+        [Display(Name = "ListaPolazaka")]
+        public List<DateTime> ListaPolazaka { get; set; }
 
     }
 

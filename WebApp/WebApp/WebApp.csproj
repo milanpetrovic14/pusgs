@@ -294,10 +294,6 @@
     <Compile Include="Migrations\201906041658132_AddedRedVoznje.Designer.cs">
       <DependentUpon>201906041658132_AddedRedVoznje.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906041701181_AddedStavka.cs" />
-    <Compile Include="Migrations\201906041701181_AddedStavka.Designer.cs">
-      <DependentUpon>201906041701181_AddedStavka.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201906041704318_AddedTipKarte.cs" />
     <Compile Include="Migrations\201906041704318_AddedTipKarte.Designer.cs">
       <DependentUpon>201906041704318_AddedTipKarte.cs</DependentUpon>
@@ -305,6 +301,10 @@
     <Compile Include="Migrations\201906041706588_AddedKarta.cs" />
     <Compile Include="Migrations\201906041706588_AddedKarta.Designer.cs">
       <DependentUpon>201906041706588_AddedKarta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906061949073_AddedStavka.cs" />
+    <Compile Include="Migrations\201906061949073_AddedStavka.Designer.cs">
+      <DependentUpon>201906061949073_AddedStavka.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -394,7 +394,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -466,14 +468,14 @@
     <EmbeddedResource Include="Migrations\201906041658132_AddedRedVoznje.resx">
       <DependentUpon>201906041658132_AddedRedVoznje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906041701181_AddedStavka.resx">
-      <DependentUpon>201906041701181_AddedStavka.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906041704318_AddedTipKarte.resx">
       <DependentUpon>201906041704318_AddedTipKarte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906041706588_AddedKarta.resx">
       <DependentUpon>201906041706588_AddedKarta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906061949073_AddedStavka.resx">
+      <DependentUpon>201906061949073_AddedStavka.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

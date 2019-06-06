@@ -22,16 +22,19 @@ namespace WebApp.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
+            
+
+            
 
             //tu nesto dodajemo sta nam bude bilo potrebno za model
 
             context.Products.Add(new Product() { Description = "Product description" } );
             context.Cenovnici.Add(new Cenovnik() { Od = DateTime.Now, Do = DateTime.Now });
-            //context.Karte.Add(new Karta() { VremeKupovine = DateTime.Now });
+            context.Karte.Add(new Karta() { VremeKupovine = DateTime.Now, Putnik = null, Stavka = null, VrstaKarte = null });
             context.Linije.Add(new Linija() { ImeLinije = "Linija 22" });
-            //context.RedoviVoznje.Add(new RedVoznje() { });
+            context.RedoviVoznje.Add(new RedVoznje() { Linije = null, Dan = TipDana.Praznik, ListaPolazaka = null});
             context.Stanice.Add(new Stanica() { NazivStanice = "Stanica 2", AdresaStanice = "Adresa 2" });
-            //context.Stavke.Add(new Stavka() { /* Cenovnik = null, TipKarte = null,*/ Cena = 88 });
+            context.Stavke.Add(new Stavka() { Cenovnik = null, TipKarte = null, ListaKarti = null, Cena = 88 });
 
             if (!context.Roles.Any(r => r.Name == "Admin"))
             {

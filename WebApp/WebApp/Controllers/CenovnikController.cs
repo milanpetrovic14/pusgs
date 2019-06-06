@@ -27,7 +27,7 @@ namespace WebApp.Controllers
         public IHttpActionResult PostCenovnik(CenovnikBindingModel cenIM)
         {
 
-            var cen = new Cenovnik() { Od = cenIM.Od };
+            var cen = new Cenovnik() { Od = cenIM.Od, Do = cenIM.Do };
 
             unitOfWork.Cenovnik.Add(cen);
             unitOfWork.Complete();

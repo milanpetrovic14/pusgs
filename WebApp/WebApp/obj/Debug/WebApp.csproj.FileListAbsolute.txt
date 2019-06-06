@@ -154,6 +154,6 @@ C:\Users\Nemanja\Desktop\vezbe2ProjekatWeb2\WebApp\WebApp\obj\Debug\WebApp.Migra
 C:\Users\Nemanja\Desktop\vezbe2ProjekatWeb2\WebApp\WebApp\obj\Debug\WebApp.Migrations.AddedLinija.resources
 C:\Users\Nemanja\Desktop\vezbe2ProjekatWeb2\WebApp\WebApp\obj\Debug\WebApp.Migrations.AddedStanica.resources
 C:\Users\Nemanja\Desktop\vezbe2ProjekatWeb2\WebApp\WebApp\obj\Debug\WebApp.Migrations.AddedRedVoznje.resources
-C:\Users\Nemanja\Desktop\vezbe2ProjekatWeb2\WebApp\WebApp\obj\Debug\WebApp.Migrations.AddedStavka.resources
 C:\Users\Nemanja\Desktop\vezbe2ProjekatWeb2\WebApp\WebApp\obj\Debug\WebApp.Migrations.AddedTipKarte.resources
 C:\Users\Nemanja\Desktop\vezbe2ProjekatWeb2\WebApp\WebApp\obj\Debug\WebApp.Migrations.AddedKarta.resources
+C:\Users\Nemanja\Desktop\vezbe2ProjekatWeb2\WebApp\WebApp\obj\Debug\WebApp.Migrations.AddedStavka.resources

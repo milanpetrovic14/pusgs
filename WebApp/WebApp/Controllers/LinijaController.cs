@@ -25,7 +25,7 @@ namespace WebApp.Controllers
         public IHttpActionResult PostLinija(LinijaBindingModel linIM)
         {
 
-            var lin = new Linija() { ImeLinije = linIM.ImeLinije };
+            var lin = new Linija() { ImeLinije = linIM.ImeLinije, Stanice = linIM.Stanice };
 
             unitOfWork.Linija.Add(lin);
             unitOfWork.Complete();

@@ -27,7 +27,7 @@ namespace WebApp.Controllers
         public IHttpActionResult PostStavka(StavkaBindingModel stavkaIM)
         {
 
-            var stavka = new Stavka() { Cena = stavkaIM.Cena };
+            var stavka = new Stavka() { Cena = stavkaIM.Cena, Cenovnik = stavkaIM.Cenovnik, ListaKarti = stavkaIM.ListaKarti, TipKarte = stavkaIM.TipKarte };
 
             unitOfWork.Stavka.Add(stavka);
             unitOfWork.Complete();

@@ -27,7 +27,7 @@ namespace WebApp.Controllers
         public IHttpActionResult PostRedVoznje(RedVoznjeBindingModel redIM)
         {
 
-            var red = new RedVoznje() { /*Description = redIM.Description*/ };
+            var red = new RedVoznje() { Dan = redIM.Dan, Linije = redIM.Linije, ListaPolazaka = redIM.ListaPolazaka };
 
             unitOfWork.RedVoznje.Add(red);
             unitOfWork.Complete();

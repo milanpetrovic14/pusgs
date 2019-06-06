@@ -27,7 +27,7 @@ namespace WebApp.Controllers
         public IHttpActionResult PostKarta(KartaBindingModel kartaIM)
         {
 
-            var karta = new Karta() { VremeKupovine = kartaIM.VremeKupovine };
+            var karta = new Karta() { VremeKupovine = kartaIM.VremeKupovine, Putnik = kartaIM.Putnik, Stavka = kartaIM.Stavka, VrstaKarte = kartaIM.VrstaKarte };
 
             unitOfWork.Karta.Add(karta);
             unitOfWork.Complete();
