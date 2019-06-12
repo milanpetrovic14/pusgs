@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { PricelistComponent} from './pricelist/pricelist.component';
 
 import { HttpClientModule }    from '@angular/common/http';
 
@@ -15,7 +15,8 @@ import { HttpClientModule }    from '@angular/common/http';
     AppComponent,
     RegisterComponent,
     LogInComponent,
-    NavbarComponent
+    NavbarComponent,
+    PricelistComponent
   ],
   imports: [
     BrowserModule,
