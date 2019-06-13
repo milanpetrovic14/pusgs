@@ -25,46 +25,47 @@ export class AuthHttpService{
                 return true;
         }
         
-        // logIn(username: string, password: string){
+        logIn(username: string, password: string){
 
-        //     let data = `username=${username}&password=${password}&grant_type=password`;
-        //     let httpOptions = {
-        //         headers:{
-        //             "Content-type": "application/x-www-form-urlencoded"
-        //         }
-        //     }
-        //    // return this.http.get<any>(this.base_url + "/api/Account/GetTipKorisnika/" + username)
-        //     this.http.post<any>(this.base_url + "/oauth/token",data, httpOptions )
-        //     .subscribe(data => {
-        //     localStorage.jwt = data.access_token;
-        //     let jwtData = localStorage.jwt.split('.')[1]
-        //     let decodedJwtJsonData = window.atob(jwtData)
-        //     let decodedJwtData = JSON.parse(decodedJwtJsonData)
+            let data = `username=${username}&password=${password}&grant_type=password`;
+            let httpOptions = {
+                headers:{
+                    "Content-type": "application/x-www-form-urlencoded"
+                }
+            }
+           // return this.http.get<any>(this.base_url + "/api/Account/GetTipKorisnika/" + username)
+            this.http.post<any>(this.base_url + "/oauth/token",data, httpOptions )
+            .subscribe(data => {
+            localStorage.jwt = data.access_token;
+            let jwtData = localStorage.jwt.split('.')[1]
+            let decodedJwtJsonData = window.atob(jwtData)
+            let decodedJwtData = JSON.parse(decodedJwtJsonData)
 
   
-        //     let role = decodedJwtData.role
-        //     this.user = decodedJwtData.unique_name;
+            let role = decodedJwtData.role
+            this.user = decodedJwtData.unique_name;
             
-        //     });
-        //     //return this.http.get<any>(this.base_url + "/api/Account/GetTipKorisnika/" + username);
-        // }
-        
-        // logIn2(username: string, password: string){
-
-        //      this.http.get<any>(this.base_url + "/api/Account/GetTipKorisnika/" + username).subscribe();
-        // }
-
-        logIn(response: Response) : void {
-
-            let responseJson = response.json();
-            //let accessToken = responseJson.access_token;
-            let role = response.headers.get('Role');
-            let id = response.headers.get('UserId');
-    
-            //let authdata = new AuthData(accessToken, role, id);
-            //localStorage.setItem('token', JSON.stringify(authdata));
-            //console.log(authdata);
+            });
+            //return this.http.get<any>(this.base_url + "/api/Account/GetTipKorisnika/" + username);
         }
+        
+        public isAuthenticated(): boolean {
+            if(localStorage.jwt != "undefined")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        }
+
+        logIn2(username: string, password: string){
+
+             this.http.get<any>(this.base_url + "/api/Account/GetTipKorisnika/" + username).subscribe();
+        }
+
+        
 
         logOut(): Observable<any> {       
             if(this.isLoggedIn() === true) {
@@ -119,10 +120,5 @@ export class AuthHttpService{
         GetTipKorisnika(user : string): Observable<any>{
            
             return this.http.get<any>(this.base_url + "/api/Account/GetTipKorisnika/" + user);
-        }
-
-        GetRolaKorisnika(user : string): Observable<any>{
-           
-            return this.http.get<any>(this.base_url + "/api/Account/GetRolaKorisnika/" + user);
         }
 }

@@ -383,7 +383,7 @@ namespace WebApp.Controllers
                 Tip = model.Tip
             };
 
-            IdentityResult result = await UserManager.CreateAsync(user, ApplicationUser.HashPassword(model.Password));                
+            IdentityResult result = await UserManager.CreateAsync(user, model.Password);                
             
             if (!result.Succeeded)
             {

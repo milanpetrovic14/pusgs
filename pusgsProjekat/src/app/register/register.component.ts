@@ -22,7 +22,6 @@ export class RegisterComponent implements OnInit {
   //private userTypes: UserType[];
   private showImageInput: boolean = false;
   private types = ['Regular', 'Controlor', 'Admin'];
-
   registacijaForm = this.fb.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
@@ -30,7 +29,8 @@ export class RegisterComponent implements OnInit {
     password: ['', Validators.required],
     confirmPassword: ['', Validators.required],
     email: ['', Validators.required],
-    date: ['', Validators.required]
+    date: ['', Validators.required],
+    tip: ['', Validators.required]
   });
   
   constructor(private http: AuthHttpService, private fb: FormBuilder, private router: Router, private registerService: RegisterService) { }
@@ -42,6 +42,7 @@ export class RegisterComponent implements OnInit {
     register(){
       let regModel: User = this.registacijaForm.value;
       this.http.registration(regModel);
+      this.router.navigate(['/login']); //login
       //form.reset();
     }
 
@@ -54,6 +55,10 @@ export class RegisterComponent implements OnInit {
                            f.value.password, f.value.confirmPassword, f.value.address,
                            date);
 
+
+
+
+
       console.log(this.user);
       
       this.submitted = true;  // animation
@@ -62,13 +67,13 @@ export class RegisterComponent implements OnInit {
       
   
       
-        this.registerService.registerUser(this.user/*, this.fileToUpload*/).subscribe( 
-          (response) => {
-            this.submitted = false;  // animation
+      this.registerService.registerUser(this.user/*, this.fileToUpload*/).subscribe( 
+        (response) => {
+          this.submitted = false;  // animation
   
             //this.notificationService.notifyEvent.emit('Successfully registered. You can now log in.');
-            this.router.navigate(['/login']); //login
-          },
+            
+        },
     
           /*(error) => {       
             this.submitted = false;  // animation
@@ -87,7 +92,10 @@ export class RegisterComponent implements OnInit {
   
           }*/
         );
+        this.router.navigate(['/login']); //login
       }
+      
+    
       
     }
 

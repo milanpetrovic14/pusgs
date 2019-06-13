@@ -32,9 +32,9 @@ namespace WebApp.Controllers
             unitOfWork.Linija.Add(lin);
             unitOfWork.Complete();
 
-            //return CreatedAtRoute("DefaultApi", new { id = lin.IdLinije }, lin);
+            return CreatedAtRoute("DefaultApi", new { id = lin.IdLinije }, lin);
 
-            return Ok();
+            //return Ok();
         }
 
         // GET: api/Linija
