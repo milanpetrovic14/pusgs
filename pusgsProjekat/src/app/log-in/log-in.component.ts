@@ -22,12 +22,18 @@ export class LogInComponent implements OnInit {
     }
   }
 
-  login(user:User,form: NgForm){
-    this.authService.logIn(user.username, user.password);
-    //this.authService.logIn2(user.username,user.password);
-    //form.reset();
-    this.router.navigate(['/home']); 
-  }
+ 
+  // onLogin(f: NgForm): void {
+  //   this.submitted = true;  // animation 
+    
+  //   this.loginService.logIn(`${f.value.email}`,`${f.value.password}`).subscribe( 
+  //     (response) => { 
+  //       this.authService.logIn(response);
+       
+  //       this.router.navigate(['/']);
+  //     },
 
+  //   );
+  // }
   
 }

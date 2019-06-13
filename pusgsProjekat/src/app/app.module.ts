@@ -29,6 +29,7 @@ import { RedVoznjeHttpService } from './services/redvoznje.service';
 import { TicketComponent } from './ticket/ticket.component';
 import { RegisterService } from './services/register.service';
 import { LoginService } from './services/login.service';
+import { ProfilComponent } from './profil/profil.component';
 
 const routes : Routes = [
   {path:"home", component: HomeComponent},
@@ -56,7 +57,8 @@ const routes : Routes = [
     DrivingLinesComponent,
     TimetableStationComponent,
     TempUserComponent,
-    TicketComponent
+    TicketComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
