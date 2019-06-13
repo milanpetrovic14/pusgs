@@ -25,6 +25,17 @@ export class AuthHttpService{
                 return true;
         }
         
+        edit(data:User,user: string)
+        {
+             return this.http.post<any>(this.base_url + "/api/Account/Edit/" + user, data).subscribe();
+            
+        }
+
+        GetKorisnik(user : string): Observable<any>{
+           
+            return this.http.get<any>(this.base_url + "/api/Account/GetKorisnik/" + user);
+        }
+
         logIn(username: string, password: string){
 
             let data = `username=${username}&password=${password}&grant_type=password`;
@@ -103,11 +114,11 @@ export class AuthHttpService{
         }
 
         GetCenaKarte(tip: string): Observable<any>{
-            return this.http.get<any>(this.base_url + "/api/PriceOfTickets/GetKarta/" + tip);
+            return this.http.get<any>(this.base_url + "/api/Karta/GetKarta/" + tip);
         }
         GetKupiKartu(tipKarte: string, tipKorisnika: string, user : string): Observable<any>{
            
-            return this.http.get<any>(this.base_url + "/api/PriceOfTickets/GetKartaKupi2/" + tipKarte + "/" + tipKorisnika + "/" + user);
+            return this.http.get<any>(this.base_url + "/api/Karta/GetKartaKupi2/" + tipKarte + "/" + tipKorisnika + "/" + user);
         }
         GetAllLines() : Observable<any>{
             return Observable.create((observer) => {
@@ -117,6 +128,12 @@ export class AuthHttpService{
                 }) 
             });
         }
+
+        GetRolaKorisnika(user : string): Observable<any>{
+           
+            return this.http.get<any>(this.base_url + "/api/Account/GetRolaKorisnika/" + user);
+        }
+        
         GetTipKorisnika(user : string): Observable<any>{
            
             return this.http.get<any>(this.base_url + "/api/Account/GetTipKorisnika/" + user);

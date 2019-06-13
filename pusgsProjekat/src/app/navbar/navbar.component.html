@@ -22,10 +22,13 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-          <li><a class="nav-item nav-link"routerLink="/login" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>       
+          <li><a class="nav-item nav-link" [(ngModel)]="user" *ngIf = "(user == 'neregistrovan')" routerLink="/login" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>       
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a class="nav-item nav-link" routerLink="/registration" href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li>    
+            <li><a class="nav-item nav-link" [(ngModel)]="user" *ngIf = "(user == 'neregistrovan')" routerLink="/registration" href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li>    
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-item nav-link" [(ngModel)]="user" *ngIf = "(user != 'neregistrovan')" routerLink="/profil" href="#"><span class="glyphicon glyphicon-user"></span> Profil</a></li>    
           </ul>
     </div>
   </nav>
