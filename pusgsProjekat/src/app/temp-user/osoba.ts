@@ -11,11 +11,11 @@ export class User{
     email:string
     confirmpassword:string
     date:string
-    //tip:string
+    tip:string
     //address:string
 
     constructor(username?:string, firstName?: string, lastName?: string, email?: string, 
-        password?: string, confirmPassword?: string, address?: string, date?: string/*, tip?: string*/) {
+        password?: string, confirmPassword?: string, date?: string, tip?: string) {
 
     this.firstName = firstName;
     this.lastName = lastName;
@@ -25,6 +25,6 @@ export class User{
     //this.address = address;
     this.username = username;
     this.date = date;
-    //this.tip = tip;
+    this.tip = tip;
 }
 }

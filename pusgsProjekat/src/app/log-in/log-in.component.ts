@@ -22,27 +22,12 @@ export class LogInComponent implements OnInit {
     }
   }
 
- 
-
-  onLogin(f: NgForm): void {
-    this.submitted = true;  // animation 
-    
-    this.loginService.logIn(`${f.value.email}`,`${f.value.password}`).subscribe( 
-      (response) => { 
-        this.authService.logIn(response);
-       
-        this.router.navigate(['/']);
-      },
-
-      // (error) => {
-      //   this.submitted = false;  // animation 
-      //   this.notificationService.notifyEvent.emit('An error ocurred while trying to log in. The server is probably down.');
-      //   console.log(error);
-      //   if(error.status !== 0){
-      //     let errorBody = JSON.parse(error._body);
-      //     this.notificationService.notifyEvent.emit(errorBody.error_description);
-      //   }        
-      // }
-    );
+  login(user:User,form: NgForm){
+    this.authService.logIn(user.username, user.password);
+    //this.authService.logIn2(user.username,user.password);
+    //form.reset();
+    this.router.navigate(['/home']); 
   }
+
+  
 }
